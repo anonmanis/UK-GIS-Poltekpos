@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <!--Inisiasi pemakaian leaflet js biar bisa dipake-->
+        <title>Cobain Pakai Leaflet</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
+		
+    </head>
+    <body>
+        <!--Sampel penggunaan leaflet js-->
+        <div id="petaindo" style="width: 600px; height: 400px;"></div>
+        <script>
+            var mymap = L.map('petaindo').setView([-6.873211602073357, 107.57597240128112], 17);
+
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                id: 'petaindo'
+            }).addTo(mymap);
+
+            L.polygon([
+                [-6.874032853121894, 107.57481473585753],
+				[-6.8738692140924345, 107.5748391829584],
+				[-6.873819949893727, 107.57487539278134],
+				[-6.873600258148808, 107.57508728728972],
+            ]).addTo(mymap).bindPopup("Segitiga Bermuda");
+            
+            //Event map click akan menampilkan popup
+            var popup = L.popup();
+            //Menambahkan fungsi onclick saat dipakai
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(mymap);
+            }
+            //Inisiasi event onclick pada event di map
+            mymap.on('click', onMapClick);
+        </script>
+    </body>
+</html>
