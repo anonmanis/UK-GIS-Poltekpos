@@ -10,9 +10,9 @@
     </head>
     <body>
         <!--Sampel penggunaan leaflet js-->
-        <div id="petaindo" style="width: 600px; height: 400px;"></div>
+        <div id="petapolpos" style="width: 600px; height: 400px;"></div>
         <script>
-            var mymap = L.map('petaindo').setView([-6.873211602073357, 107.57597240128112], 17);
+            var mymap = L.map('petapolpos').setView([-6.873211602073357, 107.57597240128112], 17);
 
             L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
                 maxZoom: 18,
@@ -46,6 +46,10 @@
 				[-6.873332633512843, 107.57691227677005],
 				[-6.873640202106906, 107.57682376387243],
 				[-6.8736069154731645, 107.57663466814131],
+				[-6.8736987865766395, 107.5765850472757],
+				[-6.873697455111503, 107.57658638838018],
+				[-6.874009017857089, 107.57613711837153],
+				[-6.874514974019736, 107.57584207537535],
             ]).addTo(mymap).bindPopup("Poltekpos");
             
             //Event map click akan menampilkan popup
